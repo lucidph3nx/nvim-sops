@@ -5,7 +5,6 @@ M.get_sops_general_options = function()
   local awsProfile = vim.g.nvim_sops_defaults_aws_profile
   local gcpCredentialsPath = vim.g.nvim_sops_defaults_gcp_credentials_path
   local ageKeyFile = vim.g.nvim_sops_defaults_age_key_file
-  debug('config',  { awsProfile, gcpCredentialsPath, ageKeyFile } )
 
   local sopsGeneralEnvVars = {}
 
@@ -21,7 +20,9 @@ M.get_sops_general_options = function()
     sopsGeneralEnvVars.SOPS_AGE_KEY_FILE = ageKeyFile
   end
 
-  debug('sops options', {sopsGeneralEnvVars})
+  for key, value in pairs(sopsGeneralEnvVars) do
+    debug('sops option: ' .. key .. ' = ' .. value)
+  end
 
   return {
     sopsGeneralEnvVars,
