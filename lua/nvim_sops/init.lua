@@ -1,4 +1,5 @@
 local utils = require "nvim_sops.utils"
+local commands = require "nvim_sops.commands"
 local M = {}
 
 M.init = function()
@@ -30,5 +31,7 @@ M.setup = function(options)
 
   vim.g.__nvim_sops_setup_completed = true
 end
+
+M.commands = commands
 
 return M
