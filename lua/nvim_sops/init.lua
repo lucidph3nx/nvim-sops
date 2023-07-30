@@ -9,7 +9,9 @@ end
 
 M.setup = function(options)
   if options == nil then
-    options = {}
+    options = {
+      defaults = {}
+    }
   end
 
   local o = utils.first_not_nil
