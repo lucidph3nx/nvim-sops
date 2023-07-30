@@ -10,7 +10,14 @@ end
 M.setup = function(options)
   if options == nil then
     options = {
-      defaults = {}
+      enabled = true,
+      debug = false,
+      binPath = "sops",
+      defaults = {
+        awsProfile = os.getenv("AWS_PROFILE"),
+        ageKeyFile = os.getenv("SOPS_AGE_KEY_FILE"),
+        gcpCredentialsPath = os.getenv("GOOGLE_APPLICATION_CREDENTIALS"),
+      }
     }
   end
 
