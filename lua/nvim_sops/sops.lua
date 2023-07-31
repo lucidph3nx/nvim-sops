@@ -25,7 +25,7 @@ M.get_sops_general_options = function()
   end
 
   return {
-    sopsGeneralEnvVars,
+    sopsGeneralEnvVars = sopsGeneralEnvVars
   }
 end
 
